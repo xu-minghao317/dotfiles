@@ -13,8 +13,6 @@ if [[ "$OS_TYPE" == "Darwin" ]]; then
     ### Homebrew config ###
     # Avoid Gatekeeper checks on macOS
     export HOMEBREW_CASK_OPTS='--no-quarantine'
-    # Make `brew cleanup` and `brew uninstall` autoremove unneed dependencies
-    export HOMEBREW_AUTOREMOVE=true
     # Suppress environment hints, providing a cleaner terminal output
     export HOMEBREW_NO_ENV_HINTS=true
     # Opt-out analytics
