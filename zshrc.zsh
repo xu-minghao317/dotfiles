@@ -17,21 +17,20 @@ DISABLE_LS_COLORS=true
 
 # omz plugins to be loaded
 plugins=(
-    # third-party plugins start here...
-    autoupdate           # autoupgrade omz plugins and themes
-    you-should-use       # So you don't forget aliases
-    conda-zsh-completion # conda completions
-    zsh-autosuggestions  # Fish-like autosuggestions
-    #
-    # bundled plugins start here...
-    extract           # Extract archives easily
-    ssh-agent         # Autostart ssh-agent
-    gpg-agent         # Autostart gpg-agent, and fix tty issue
-    git               # Git aliases and functions
-    vi-mode           # Basic vim-like editing
-    tmux              # Tmux aliases
-    colored-man-pages # This and vivid provide catppuccin-mocha flavor man pages
-    nvm               # nvm completions, and source nvm
+    # third-party plugins start here ↓
+    autoupdate              # autoupgrade omz plugins and themes
+    you-should-use          # So you don't forget aliases
+    conda-zsh-completion    # conda completions
+    zsh-autosuggestions     # Fish-like autosuggestions
+    # bundled plugins start here ↓
+    extract                 # Extract archives easily
+    ssh-agent               # Autostart ssh-agent
+    gpg-agent               # Autostart gpg-agent, and fix tty issue
+    git                     # Git aliases and functions
+    vi-mode                 # Basic vim-like editing
+    tmux                    # Tmux aliases
+    colored-man-pages       # This and vivid provide catppuccin-mocha flavor man pages
+    nvm                     # nvm completions, and source nvm
     #
     zsh-syntax-highlighting # Must be the last plugin!
 )
