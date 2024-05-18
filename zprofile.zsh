@@ -2,8 +2,8 @@
 export OS_TYPE=$(uname -s)
 
 # Include $HOME/.local/bin if it exists and is not empty
-if [[ -d "$HOME/.local/bin" ]] && [[ -n $(echo $HOME/.local/bin/*(N)) ]]; then
-    path=("$HOME/.local/bin" $path[@])
+if [[ -d "$HOME/.local/bin" ]] && [[ -n "$HOME/.local/bin/*(N)" ]]; then
+    path=("$HOME/.local/bin" "${path[@]}")
 fi
 
 if [[ "$OS_TYPE" == "Darwin" ]]; then
