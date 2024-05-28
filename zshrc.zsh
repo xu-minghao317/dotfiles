@@ -63,6 +63,9 @@ if [[ "$OS_TYPE" == "Darwin" ]]; then
     zstyle ':omz:plugins:nvm' autoload yes
 fi
 
+# Enable tab completion for hidden files
+_comp_options+=(globdots)
+
 # Init omz (compinit is called within this)
 source "$ZSH/oh-my-zsh.sh"
 
