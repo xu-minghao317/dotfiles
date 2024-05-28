@@ -41,7 +41,7 @@ fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 
 # Add Homebrew formula completions, remember to call `brew completions link`
 if [[ "$OS_TYPE" == "Darwin" ]]; then
-    fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
+    fpath=("$(brew --prefix)/share/zsh/site-functions" "${fpath[@]}")
 fi
 
 # Limit zsh-autosuggestion triggering for long strings
@@ -97,7 +97,7 @@ if [[ "$OS_TYPE" == "Darwin" ]]; then
         if [ -f "/opt/homebrew/Caskroom/miniconda/base/etc/profile.d/conda.sh" ]; then
             source "/opt/homebrew/Caskroom/miniconda/base/etc/profile.d/conda.sh"
         else
-            path=("/opt/homebrew/Caskroom/miniconda/base/bin" $path)
+            path=("/opt/homebrew/Caskroom/miniconda/base/bin" "${path[@]}")
         fi
     fi
     unset __conda_setup
