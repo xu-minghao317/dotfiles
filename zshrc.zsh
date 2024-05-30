@@ -108,7 +108,6 @@ fi
 
 # bat
 export BAT_CONFIG_PATH="$HOME/.config/bat/bat.conf"
-export BAT_PAGER='less --RAW-CONTROL-CHARS --quit-if-one-screen'
 
 # fzf
 [[ -f "$HOME/.dotfiles/fzf.zsh" ]] && source "$HOME/.dotfiles/fzf.zsh"
