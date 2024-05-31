@@ -8,7 +8,7 @@ if [[ "$OS_TYPE" == "Darwin" ]]; then
 elif [[ "$OS_TYPE" == "Linux" ]]; then
     alias eza_base='eza --icons --group-directories-first --no-quotes'
 fi
-alias l='eza_base --all --classify'
+alias l='eza_base --classify --all'
 alias ll='eza_base --all --classify --long --git --time-style=+"%y/%m/%d, %H:%M"'
 
 # Substitute `cat` with `bat`
