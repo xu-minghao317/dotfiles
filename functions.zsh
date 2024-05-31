@@ -48,7 +48,7 @@ print_path_var() {
     # print_path_var MANPATH
 
     if [[ -n $1 ]]; then
-        print -rl ${(P)1} | bat --language=zsh
+        print -rl ${(P)1} | bat --language=zsh --style=numbers
     else
         print "No variable provided"
         return 1
