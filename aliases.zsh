@@ -52,7 +52,7 @@ alias -g -- --help='--help 2>&1 | bat --language=help --style=plain'
 # Quickly edit ssh config
 alias sshconfig='vim ~/.ssh/config'
 
-# Show GPU usage with a 2s update frequency
+# Show Nvidia GPU usage with a 2s update frequency
 if command -v nvidia-smi &>/dev/null; then
     alias gpustat='watch -n 2 nvidia-smi'
 fi
