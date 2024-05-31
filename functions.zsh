@@ -14,6 +14,7 @@ swap_git_gpg_key() {
         git config --global user.signingKey CE3E58885D9C10AF
     else
         print "No known YubiKey inserted"
+        return 1
     fi
 }
 
@@ -25,6 +26,14 @@ pdfs_light() {
 
     if ! command -v pdfs >/dev/null 2>&1; then
         print "The 'pdfs' command is required"
+        return 1
+    fi
+
+    if [[ -z "$1" ]]; then
+        print "No PDF file provided"
+        return 1
+    elif [[ ! -f "$1" ]]; then
+        print "The provided file does not exist"
         return 1
     fi
 
@@ -42,5 +51,6 @@ print_path_var() {
         print -rl ${(P)1} | bat --language=zsh
     else
         print "No variable provided"
+        return 1
     fi
 }
