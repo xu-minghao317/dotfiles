@@ -133,9 +133,6 @@ export _ZO_FZF_OPTS="
 # Init iterm2 shell integration
 [[ -f "$HOME/.iterm2_shell_integration.zsh" ]] && source "$HOME/.iterm2_shell_integration.zsh"
 
-# Build $PATH
-export PATH
-
 # Init starship prompt
 export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
 eval "$(starship init zsh)"
