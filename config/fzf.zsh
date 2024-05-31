@@ -1,5 +1,9 @@
 # Init fzf
-[ -f "$HOME/.fzf.zsh" ] && source "$HOME/.fzf.zsh"
+if [[ "$OS_TYPE" == "Darwin" ]]; then
+    [ -f "/opt/homebrew/opt/fzf/shell/key-bindings.zsh" ] && source "/opt/homebrew/opt/fzf/shell/key-bindings.zsh"
+elif [[ "$OS_TYPE" == "Linux" ]]; then
+    [ -f "/usr/share/fzf/key-bindings.zsh" ] && source "/usr/share/fzf/key-bindings.zsh"
+fi
 
 # Default fzf command and options
 export FZF_DEFAULT_COMMAND='fd --type file --strip-cwd-prefix --hidden --follow --exclude .git'

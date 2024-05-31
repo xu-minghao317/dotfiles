@@ -2,14 +2,31 @@
 
 set -e
 
-CONFIG="install.conf.yaml"
 DOTBOT_DIR="dotbot"
-
 DOTBOT_BIN="bin/dotbot"
 BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+MACOS_DIR="${BASEDIR}/macos"
+LINUX_DIR="${BASEDIR}/linux"
 
 cd "${BASEDIR}"
 git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
 git submodule update --init --recursive "${DOTBOT_DIR}"
 
-"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}"
+if [ -z "$1" ]; then
+  echo "Error: No platform specified. Please provide a platform. Available platforms are macos or listed under linux/."
+  exit 1
+fi
+
+PLATFORM="$1"
+if [ "$PLATFORM" == "macos" ]; then
+  CONFIG_PATH="${MACOS_DIR}/macos.conf.yaml"
+else
+  CONFIG_PATH="${LINUX_DIR}/${PLATFORM}.conf.yaml"
+fi
+
+if [ ! -f "${CONFIG_PATH}" ]; then
+  echo "Error: Configuration file '${CONFIG_PATH}' not found."
+  exit 1
+fi
+
+"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG_PATH}"

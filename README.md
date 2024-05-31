@@ -1,92 +1,83 @@
 # Dotfiles Repository
 
-[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-%23FE5196?logo=conventionalcommits&logoColor=white)](https://conventionalcommits.org)
+![GitHub License](https://img.shields.io/github/license/xu-minghao317/dotfiles)
 [![Issues](https://img.shields.io/github/issues/xu-minghao317/dotfiles-macOS)](https://github.com/xu-minghao317/dotfiles-macOS/issues)
 
-> [!CAUTION]  
-> This repository is for personal use only. Do not use it directly without understanding what it does.
+Personal .dotfiles for macOS (Apple Silicon) and Manjaro (amd64) running zsh
+
+> [!WARNING]  
+> This repository is intended for personal use and should be run on a new machine. Do not use it directly without understanding its operations. Running `./install` will *overwrite* existing dotfiles!
 
 > [!NOTE]  
-> Feel free to fork it and modify it to suit your needs or open issues/PRs to discuss 🤗.
+> Feel free to fork it and modify it to suit your needs or open issues/PRs to discuss 😌.
 
 ## Workflow for macOS (Apple Silicon)
 
-1. **Update macOS**
+1. Update system
 
     ```shell
-    softwareupdate --install -all
+    softwareupdate --install --all
     ```
 
-1. **Install `Command Line Tools`**
+1. Install `Command Line Tools`
 
     ```shell
     xcode-select --install
     ```
 
-1. **Bootstrap dotfiles**
+1. Install dotfiles
+
+    **All packages listed in [`macos/Brewfile`](https://github.com/xu-minghao317/dotfiles/blob/main/macos/Brewfile) will be installed.**
 
     ```shell
-    git clone https://github.com/xu-minghao317/dotfiles.git ~/.dotfiles --recursive --depth=1
-    cd ~/.dotfiles && ./install
+    git clone https://github.com/xu-minghao317/dotfiles.git ~/.dotfiles --recursive
+    cd ~/.dotfiles
+    ./install macos
     ```
 
-1. **Install Packages**
+1. Install Nerd Fonts and themes
 
-    ```shell
-    brew bundle --file ~/.dotfiles/Brewfile
-    ```
+    Download and install [Nerd Fonts](https://www.nerdfonts.com/font-downloads). Use these fonts in your preferred terminal emulator. Note that JetBrains Mono is included in the Brewfile. Install missing [Catppuccin themes](https://github.com/catppuccin/catppuccin).
 
-2. **Install a nerd font like [Fira Code Nerd Font](https://www.nerdfonts.com/font-downloads)**
+1. Restart your terminal, and you should be good to go! 🎉 
 
-3. **Migrate GPG/SSH keys securely**
-
-## Workflow for Ubuntu (amd64)
-
-1. **Update and Upgrade Packages**
-
-    ```shell
-    sudo apt update && sudo apt upgrade -y
-    ```
-
-1. **Install Zsh and Essential Packages**
-
-    ```shell
-    sudo apt install zsh git curl build-essential -y
-    ```
-
-    Switch default shell to Zsh:
-
-    ```shell
-    chsh -s $(which zsh)
-    ```
-
-1. **Bootstrap Dotfiles**
-
-    ```shell
-    git clone https://github.com/xu-minghao317/dotfiles.git ~/.dotfiles --recursive --depth=1
-    cd ~/.dotfiles && ./install
-    ```
-
-1. **Install a nerd font like [Fira Code Nerd Font](https://www.nerdfonts.com/font-downloads)**
-
-1. **Install Packages** (apt packages are usually outdated, double check packages versions)
-
-1. **Migrate GPG/SSH Keys Securely**
-
-## Optional Steps for macOS
+### Optional Steps for macOS
 
 1. Enable Touch ID for `sudo`:
 
-    macOS Sonoma adds support to permanently enable Touch ID for `sudo`. macOS before Sonoma can edit `/etc/pam.d/sudo` instead.
-
-    On Sonoma we do:
+    macOS Sonoma adds support to permanently enable Touch ID for `sudo`. On Sonoma and above we do:
 
     ```shell
     sudo cp /etc/pam.d/sudo_local.template /etc/pam.d/sudo_local
     sudo vim /etc/pam.d/sudo_local
     ```
+
     Uncomment the only line there:
     ```shell
     - #auth       sufficient     pam_tid.so
     +  auth       sufficient     pam_tid.so
     ```
+
+## Workflow for Manjaro (amd64)
+
+1. Update system
+
+    ```shell
+    sudo pacman -Syu
+    ```
+
+1. Install dotfiles
+
+    **All packages listed in [`linux/pacman-packages.txt`](https://github.com/xu-minghao317/dotfiles/blob/main/linux/pacman-packages.txt) will be installed.**
+
+    ```shell
+    git clone https://github.com/xu-minghao317/dotfiles.git ~/.dotfiles --recursive
+    cd ~/.dotfiles
+    ./install manjaro
+    ```
+
+1. Install Nerd Fonts and themes
+
+    Download and install [Nerd Fonts](https://www.nerdfonts.com/font-downloads). Use these fonts in your preferred terminal emulator. Install missing [Catppuccin themes](https://github.com/catppuccin/catppuccin).
+
+1. Restart your terminal, and you should be good to go! 🎉 
