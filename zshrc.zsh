@@ -107,7 +107,7 @@ if [[ "$OS_TYPE" == "Darwin" ]]; then
 fi
 
 # bat
-export BAT_CONFIG_PATH="$HOME/.config/bat/bat.conf"
+export BAT_CONFIG_PATH="$XDG_CONFIG_HOME/bat/bat.conf"
 
 # fzf
 [[ -f "$HOME/.dotfiles/fzf.zsh" ]] && source "$HOME/.dotfiles/fzf.zsh"
@@ -134,5 +134,5 @@ export _ZO_FZF_OPTS="
 [[ -f "$HOME/.iterm2_shell_integration.zsh" ]] && source "$HOME/.iterm2_shell_integration.zsh"
 
 # Init starship prompt
-export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
+export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship/starship.toml"
 eval "$(starship init zsh)"
