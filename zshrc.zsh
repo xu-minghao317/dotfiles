@@ -110,7 +110,7 @@ fi
 export BAT_CONFIG_PATH="$XDG_CONFIG_HOME/bat/bat.conf"
 
 # fzf
-[[ -f "$HOME/.dotfiles/fzf.zsh" ]] && source "$HOME/.dotfiles/fzf.zsh"
+[[ -f "$HOME/.dotfiles/config/fzf.zsh" ]] && source "$HOME/.dotfiles/config/fzf.zsh"
 
 # Init zoxide and overwrite cd
 eval "$(zoxide init zsh --cmd cd)"
