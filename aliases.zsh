@@ -56,3 +56,6 @@ alias sshconfig='vim ~/.ssh/config'
 if command -v nvidia-smi &>/dev/null; then
     alias gpustat='watch -n 2 nvidia-smi'
 fi
+
+# Rebuild completion cache
+alias rebuild_completion='rm -v ~/.zcompdump* && exec zsh'
