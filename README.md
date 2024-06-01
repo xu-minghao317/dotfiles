@@ -5,6 +5,8 @@
 
 Personal .dotfiles for macOS (Apple Silicon) and Manjaro (amd64) running zsh
 
+<img src="demo.gif" height="500" />
+
 > [!WARNING]  
 > This repository is intended for personal use and should be run on a new machine. Do not use it directly without understanding its operations. Running `./install` will *overwrite* existing dotfiles!
 
