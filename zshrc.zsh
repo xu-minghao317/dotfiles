@@ -20,7 +20,6 @@ plugins=(
     # third-party plugins start here ↓
     autoupdate              # autoupgrade omz plugins and themes
     you-should-use          # So you don't forget aliases
-    conda-zsh-completion    # conda completions
     zsh-autosuggestions     # Fish-like autosuggestions
     # bundled plugins start here ↓
     extract                 # Extract archives easily
@@ -91,20 +90,12 @@ less_termcap[ue]="${reset_color}"
 export MANPAGER='less --squeeze-blank-lines --long-prompt +Gg'
 
 ### general config ###
-# miniconda
-if [[ "$OS_TYPE" == "Darwin" ]]; then
-    __conda_setup="$('/opt/homebrew/Caskroom/miniconda/base/bin/conda' 'shell.zsh' 'hook' 2>/dev/null)"
-    if [ $? -eq 0 ]; then
-        eval "$__conda_setup"
-    else
-        if [ -f "/opt/homebrew/Caskroom/miniconda/base/etc/profile.d/conda.sh" ]; then
-            source "/opt/homebrew/Caskroom/miniconda/base/etc/profile.d/conda.sh"
-        else
-            path=("/opt/homebrew/Caskroom/miniconda/base/bin" "${path[@]}")
-        fi
-    fi
-    unset __conda_setup
-fi
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && path=($PYENV_ROOT/bin "${path[@]}")
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)" # pyenv-virtualenv plugin
+export PYENV_VIRTUALENV_DISABLE_PROMPT=true
 
 # bat
 export BAT_CONFIG_PATH="$XDG_CONFIG_HOME/bat/bat.conf"

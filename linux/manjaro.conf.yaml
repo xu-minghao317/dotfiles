@@ -30,7 +30,6 @@
       ~/.zshrc: zshrc.zsh
       ~/.config/bat/bat.conf: config/bat
       ~/.config/starship/starship.toml: config/starship
-      ~/.config/conda/condarc: config/condarc
       ~/.hushlogin: config/hushlogin
       ~/.config/tmux/tmux.conf: config/tmux
       ~/.config/git/config: config/git
