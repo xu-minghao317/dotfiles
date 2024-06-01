@@ -1,4 +1,3 @@
-tap "homebrew/autoupdate"
 tap "homebrew/bundle"
 tap "homebrew/services"
 # Library of 2D and 3D vector, matrix, and math operations
@@ -13,6 +12,10 @@ brew "openssl@3"
 brew "bat"
 # Resource monitor. C++ version and continuation of bashtop and bpytop
 brew "btop"
+# Library for command-line editing
+brew "readline"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.12"
 # Select default apps for documents and URL schemes on macOS
 brew "duti"
 # Perl lib for reading and writing EXIF metadata
@@ -33,18 +36,14 @@ brew "fzf"
 brew "gh"
 # Distributed revision control system
 brew "git"
-# Syntax-highlighting pager for git and diff output
-brew "git-delta"
-# Library for command-line editing
-brew "readline"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.12"
 # Simple terminal UI for git commands
 brew "lazygit"
 # Pager program similar to more
 brew "less"
 # Provides library functionality for FIDO U2F & FIDO 2.0, including USB
 brew "libfido2"
+# Apple Silicon Monitor Top written in Golang
+brew "mactop"
 # Parser generator tool and incremental parsing library
 brew "tree-sitter"
 # Ambitious Vim-fork focused on extensibility and agility
@@ -57,12 +56,12 @@ brew "openssh"
 brew "p7zip"
 # Passphrase entry dialog utilizing the Assuan protocol
 brew "pinentry"
-# Pinentry for GPG on Mac
-brew "pinentry-mac"
+# Python package management tool
+brew "poetry"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
-# Autoformat shell script source code
-brew "shfmt"
+# Utility that provides fast incremental file transfer
+brew "rsync"
 # Cross-shell prompt for astronauts
 brew "starship"
 # Simplified and community-driven man pages
@@ -83,6 +82,8 @@ brew "zoxide"
 cask "adguard"
 # VPN for privacy and security
 cask "adguard-vpn"
+# Collection of apps and services for photography, design, video, web, and UX
+cask "adobe-creative-cloud"
 # Application launcher and productivity software
 cask "alfred"
 # Enable Windows-like alt-tab
@@ -91,14 +92,20 @@ cask "alt-tab"
 cask "baidunetdisk"
 # Tool to flash OS images to SD cards & USB drives
 cask "balenaetcher"
+# OpenAI's official ChatGPT desktop app
+cask "chatgpt"
 # Voice and text chat software
 cask "discord"
 # European dictionary
 cask "eudic"
+# Developer targeted fonts with a high number of glyphs
+cask "font-jetbrains-mono-nerd-font"
 # Web browser
 cask "google-chrome"
 # Tools to protect your files
 cask "gpg-suite-no-mail"
+# Grammarly for desktop
+cask "grammarly-desktop"
 # Free and open-source media player
 cask "iina"
 # Vector graphics editor
@@ -117,12 +124,18 @@ cask "miniconda"
 cask "monitorcontrol"
 # Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
+# Desktop virtualization software
+cask "parallels"
 # PDF reader, editor and annotator
 cask "pdf-expert"
 # Email client
 cask "readdle-spark"
 # Team communication and collaboration software
 cask "slack"
+# Music streaming service
+cask "spotify"
+# Video game digital distribution service
+cask "steam"
 # Break time reminder app
 cask "stretchly"
 # Open-source code editor
@@ -138,7 +151,6 @@ vscode "dbaeumer.vscode-eslint"
 vscode "deerawan.vscode-dash"
 vscode "editorconfig.editorconfig"
 vscode "esbenp.prettier-vscode"
-vscode "foxundermoon.shell-format"
 vscode "github.copilot"
 vscode "github.copilot-chat"
 vscode "github.github-vscode-theme"
