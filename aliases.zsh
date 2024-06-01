@@ -63,5 +63,5 @@ alias rebuild_completion='rm -v ~/.zcompdump* && exec zsh'
 # Remove `.DS_Store` files so `npm` can finally chill and install global packages on macOS
 # Currently, npm guys think it's our fault, so let's clean up their mess
 if [[ "$OS_TYPE" == "Darwin" ]]; then
-    alias fix_npm="fd -H -d 1 '^\.DS_Store$' \$(npm list -g | head -1) -tf -X rm -i"
+    alias fix_npm="fd -H '^\.DS_Store$' $(npm list -g | head -1) -tf -X rm -f"
 fi
