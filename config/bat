@@ -1,4 +1,3 @@
-# Set theme to "Catppuccin-mocha"
-# Build from: https://raw.githubusercontent.com/catppuccin/bat/main/Catppuccin-mocha.tmTheme
-# Check "ADDING CUSTOM THEMES" section in `man bat`
---theme="Catppuccin-mocha"
+# Set theme to "Catppuccin Mocha"
+# https://github.com/catppuccin/bat
+--theme="Catppuccin Mocha"
