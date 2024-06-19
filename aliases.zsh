@@ -4,12 +4,12 @@
 
 # Substitute `ls` with `eza`
 if [[ "$OS_TYPE" == "Darwin" ]]; then
-    alias eza_base='eza --icons --group-directories-first --ignore-glob=".DS_Store|.localized" --no-quotes'
+    alias eza_base='eza --icons --group-directories-first --ignore-glob=".DS_Store|.localized" --no-quotes --hyperlink'
 elif [[ "$OS_TYPE" == "Linux" ]]; then
-    alias eza_base='eza --icons --group-directories-first --no-quotes'
+    alias eza_base='eza --icons --group-directories-first --no-quotes --hyperlink'
 fi
 alias l='eza_base --classify --all'
-alias ll='eza_base --all --classify --long --git --time-style=+"%y/%m/%d, %H:%M"'
+alias ll='eza_base --classify --all --long --git --time-style=+"%y/%m/%d, %H:%M"'
 
 # Substitute `cat` with `bat`
 alias cat=bat
