@@ -17,20 +17,20 @@ git submodule update --init --recursive "${DOTBOT_DIR}"
 git submodule foreach 'git pull --rebase origin master'
 
 if [ -z "$1" ]; then
-  echo "Error: No platform specified. Please provide a platform. Available platforms are macos or listed under linux/."
-  exit 1
+    echo "Error: No platform specified. Please provide a platform. Available platforms are macos or listed under linux/."
+    exit 1
 fi
 
 PLATFORM="$1"
 if [ "$PLATFORM" == "macos" ]; then
-  CONFIG_PATH="${MACOS_DIR}/macos.conf.yaml"
+    CONFIG_PATH="${MACOS_DIR}/macos.conf.yaml"
 else
-  CONFIG_PATH="${LINUX_DIR}/${PLATFORM}.conf.yaml"
+    CONFIG_PATH="${LINUX_DIR}/${PLATFORM}.conf.yaml"
 fi
 
 if [ ! -f "${CONFIG_PATH}" ]; then
-  echo "Error: Configuration file '${CONFIG_PATH}' not found."
-  exit 1
+    echo "Error: Configuration file '${CONFIG_PATH}' not found."
+    exit 1
 fi
 
 "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG_PATH}"
