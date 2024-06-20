@@ -8,7 +8,6 @@
           stderr: true
 
 - shell:
-      - git submodule foreach 'git pull --rebase origin master'
       - /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
       - eval "$(/opt/homebrew/bin/brew shellenv)"; brew bundle install --file=macos/Brewfile; brew completions link
       - sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"

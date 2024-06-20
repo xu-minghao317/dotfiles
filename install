@@ -9,8 +9,12 @@ MACOS_DIR="${BASEDIR}/macos"
 LINUX_DIR="${BASEDIR}/linux"
 
 cd "${BASEDIR}"
+# Synchronize submodule configurations
 git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
+# Initialize and update submodules
 git submodule update --init --recursive "${DOTBOT_DIR}"
+# Pull and rebase updates in submodules
+git submodule foreach 'git pull --rebase origin master'
 
 if [ -z "$1" ]; then
   echo "Error: No platform specified. Please provide a platform. Available platforms are macos or listed under linux/."

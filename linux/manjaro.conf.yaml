@@ -8,7 +8,6 @@
           stderr: true
 
 - shell:
-      - git submodule foreach 'git pull --rebase origin master'
       - sudo pacman -S --needed - < linux/pacman-packages.txt
       - sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
       - git clone https://github.com/TamCore/autoupdate-oh-my-zsh-plugins ~/.oh-my-zsh/custom/plugins/autoupdate
