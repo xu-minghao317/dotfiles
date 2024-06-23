@@ -9,6 +9,7 @@ Personal .dotfiles for macOS (Apple Silicon) and Manjaro (amd64) running zsh
 > This repository is intended for personal use and should be run on a new machine. Do not use it directly without understanding its operations. Running `./install` will *overwrite* existing dotfiles!
 
 > [!NOTE]  
+> Ensure using a login shell.  
 > Feel free to fork it and modify it to suit your needs or open issues/PRs to discuss 😌.
 
 ## Workflow for macOS (Apple Silicon)
