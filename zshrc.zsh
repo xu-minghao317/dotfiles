@@ -53,14 +53,8 @@ zstyle :omz:plugins:ssh-agent quiet yes
 
 # Lazy load some plugins to boost shell startup speed
 zstyle ':omz:plugins:extract' lazy yes
-zstyle ':omz:plugins:tmux' lazy yes
-# You may want to turn this off if using any npm global packages
-if [[ "$OS_TYPE" == "Darwin" ]]; then
-    zstyle ':omz:plugins:nvm' lazy yes
-    # autoload (load node version described in .nvmrc)
-    # will start working only after nvm has been lazy-loaded
-    zstyle ':omz:plugins:nvm' autoload yes
-fi
+# autoload (load node version described in .nvmrc)
+zstyle ':omz:plugins:nvm' autoload yes
 
 # Enable tab completion for hidden files
 _comp_options+=(globdots)
