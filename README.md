@@ -1,7 +1,7 @@
 # Dotfiles Repository
 
 ![GitHub License](https://img.shields.io/github/license/xu-minghao317/dotfiles)
-[![Issues](https://img.shields.io/github/issues/xu-minghao317/dotfiles-macOS)](https://github.com/xu-minghao317/dotfiles-macOS/issues)
+[![Issues](https://img.shields.io/github/issues/xu-minghao317/dotfiles)](https://github.com/xu-minghao317/dotfiles/issues)
 
 Personal .dotfiles for macOS (Apple Silicon) and Manjaro (amd64) running zsh
 
