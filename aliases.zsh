@@ -65,3 +65,6 @@ alias rebuild_completion='rm -v ~/.zcompdump* && exec zsh'
 if [[ "$OS_TYPE" == "Darwin" ]]; then
     alias fix_npm="fd -H '^\.DS_Store$' $(npm list -g | head -1) -tf -X rm -f"
 fi
+
+# Quickly open `lazygit`
+alias lg=lazygit
